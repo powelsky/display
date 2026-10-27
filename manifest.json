@@ -4,6 +4,7 @@
   "description": "Kalkulator kurs BUY Bank Mandiri USD ke IDR dengan histori dan ringkasan mingguan.",
   "lang": "id",
   "dir": "ltr",
+  "id": "./",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

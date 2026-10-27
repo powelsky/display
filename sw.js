@@ -13,7 +13,7 @@
  * Returning early (no respondWith) keeps the browser's normal network path.
  */
 
-const CACHE_NAME = 'mandiri-fx-static-v1';
+const CACHE_NAME = 'mandiri-fx-static-v2';
 
 const ASSETS = [
   './manifest.json',
@@ -21,7 +21,7 @@ const ASSETS = [
   './icons/icon-192.png',
   './icons/icon-512.png',
   './icons/icon-512-maskable.png',
-  './apple-touch-icon.png',
+  './icons/apple-touch-icon.png',
 ];
 
 const ASSET_PATHS = new Set(

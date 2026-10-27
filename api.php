@@ -148,7 +148,10 @@ try {
     if ($action === 'history') {
         $pdo = db();
         $rows = $pdo->query(
-            'SELECT id, net1_usd, net2_usd, total_usd, rate, total_idr, per_part, created_at
+            'SELECT id, net1_usd, net2_usd, total_usd, rate, total_idr, per_part,
+                    ROUND(net1_usd * rate / 4, 2) AS part_m,
+                    ROUND(net1_usd * rate / 4 + net2_usd * rate / 2, 2) AS part_b,
+                    created_at
              FROM calculations
              ORDER BY id DESC
              LIMIT 100'
@@ -160,9 +163,11 @@ try {
                 COUNT(*) AS transactions,
                 ROUND(SUM(total_usd), 2) AS total_usd,
                 ROUND(SUM(total_idr), 2) AS total_idr,
-                ROUND(SUM(per_part), 2) AS total_per_part
+                ROUND(SUM(per_part), 2) AS total_per_part,
+                ROUND(SUM(net1_usd * rate / 4), 2) AS total_part_m,
+                ROUND(SUM(net1_usd * rate / 4 + net2_usd * rate / 2), 2) AS total_part_b
              FROM calculations
-             GROUP BY strftime('%Y-W%W', created_at)
+             GROUP BY strftime('%Y-%W', created_at)
              ORDER BY week DESC
              LIMIT 12"
         )->fetchAll();

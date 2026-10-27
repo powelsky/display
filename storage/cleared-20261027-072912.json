@@ -1,0 +1,22 @@
+{
+    "calculations": [
+        {
+            "id": 1,
+            "net1_usd": 6743.8,
+            "net2_usd": 626.11,
+            "total_usd": 7369.91,
+            "rate": 17870,
+            "total_idr": 131700291.7,
+            "per_part": 32925072.93,
+            "created_at": "2026-10-27T06:46:33+07:00"
+        }
+    ],
+    "rates": [
+        {
+            "rate_type": "BUY",
+            "rate": 17870,
+            "fetched_at": 1793060916,
+            "updated_at": "2026-10-27T07:28:36+07:00"
+        }
+    ]
+}
